@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <title>后台管理->设置</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./pintuer/pintuer.css">
+    <link rel="stylesheet" href="./css/admin.css">
+    <script src="./pintuer/jquery.js"></script>
+    <script src="./pintuer/pintuer.js"></script>
+</head>
+<body>
+    <div class="lefter">
+        <div class="logo">
+            <a href="./index.html" target="_blank">
+                <img src="./images/logo.png" alt="后台管理系统" />
+            </a>
+        </div>
+    </div>
+
+    <div class="righter nav-navicon" id="admin-nav">
+        <div class="mainer">
+            <!-- 导航条start -->
+            <div class="admin-navbar">
+                <span class="float-right">
+                    <a class="button button-little bg-main" href="#">前台首页</a>
+                    <a class="button button-little bg-yellow" href="login.html">注销登陆</a>
+                </span>
+                <ul class="nav nav-inline admin-nav">
+                    <li>
+                        <a class="icon-home" href="index.html">开始</a>
+                        <ul>
+                            <li><a href="#">开始1</a></li>
+                            <li><a href="#">开始2</a></li>
+                            <li><a href="#">开始3</a></li>
+                            <li><a href="#">开始4</a></li>
+                            <li><a href="#">开始5</a></li>
+                            <li><a href="#">开始6</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="active">
+                        <a class="icon-cog" href="system.html">设置</a>
+                        <ul>
+                            <li><a href="#">设置1</a></li>
+                            <li><a href="#">设置2</a></li>
+                            <li><a href="#">设置3</a></li>
+                            <li><a href="#">设置4</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a class="icon-file-text" href="content.html">内容</a>
+                        <ul>
+                            <li><a href="#">内容1</a></li>
+                            <li><a href="#">内容2</a></li>
+                            <li><a href="#">内容3</a></li>
+                            <li><a href="#">内容4</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a class="icon-shopping-cart" href="#">订单</a>
+                    </li>
+
+                    <li>
+                        <a class="icon-user" href="#">会员</a>
+                    </li>
+
+                    <li><a class="icon-file" href="#">文件</a></li>
+                    <li><a class="icon-th-list" href="#">栏目</a></li>
+                </ul>
+            </div>
+            <!-- 导航条end -->
+            <div class="admin-bread">
+                <span>您好，admin，欢迎您的光临。</span>
+                <ul class="bread">
+                    <li><a href="index.html" class="icon-home"> 开始</a></li>
+                    <li><a href="system.html">设置</a></li>
+                    <li>系统设置</li>
+                </ul>
+            </div>
+
+            <!-- 主内容start -->
+            <div class="admin">
+                <div class="tab">
+                    <div class="tab-head"> <!-- 好像没有tab-head，所以此处不起作用 -->
+                        <strong>系统设置</strong>
+                        <ul class="tab-nav">
+                            <li class="active"><a href="#">系统设置</a></li>
+                            <li><a href="#">邮件设置</a></li>
+                            <li><a href="#">上传设置</a></li>
+                            <li><a href="#">访问设置</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tab-body">
+                        <br />
+                        <div class="tab-panel active" id="tab-set">
+                            <form action="system.html" method="post" class="form-x">
+                                <div class="form-group">
+                                    <div class="label">
+                                        <label>网站维护状态</label>
+                                    </div>
+                                    <div class="field">
+                                        <div class="button-group button-group-small radio">
+                                            <label class="button active">
+                                                <input type="radio" name="radio_bt" value="yes" checked="checked">
+                                                <span class="icon icon-check"></span>开启
+                                            </label>
+                                            <label class="button">
+                                                <input type="radio" name="radio_bt" value="no">
+                                                <span class="icon icon-times"></span>关闭
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="label">
+                                        <label>维护说明</label>
+                                    </div>
+                                    <div class="field">
+                                        <textarea class="input" rows="5" cols="50" placeholder="请填写维护说明" data-validate="required:请填写维护说明"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="label">
+                                        <label for="sitename">网站名称</label>
+                                    </div>
+                                    <div class="field">
+                                        <input type="text" class="input" id="sitename" name="sitename" size="50" placeholder="网站名称" data-validate="required:请填写你网站的名称" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="label">
+                                        <label for="siteurl">网址</label>
+                                    </div>
+                                    <div class="field">
+                                        <input type="text" class="input" id="siteurl" name="siteurl" size="50" placeholder="请填写网址" data-validate="required:请填写网址" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="label">
+                                        <label for="logo">标志</label>
+                                    </div>
+                                    <div class="field">
+                                        <a class="button input-file" href="javascript:void(0);">+ 浏览文件<input size="100" type="file" name="logo" data-validate="required:请选择上传文件,regexp#.+.(jpg|jpeg|png|gif)$:只能上传jpg|gif|png格式文件" /></a>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="label">
+                                        <label for="title">优化标题</label>
+                                    </div>
+                                    <div class="field">
+                                        <input type="text" class="input" id="title" name="title" size="50" placeholder="title标题内容，用于搜索引擎优化" data-validate="required:请填写优化标题，建议在80字以内。" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="label">
+                                        <label for="keywords">关键词</label>
+                                    </div>
+                                    <div class="field">
+                                        <input type="text" class="input" id="keywords" name="keywords" size="50" placeholder="站点关键词，用于搜索引擎优化" data-validate="required:请填写站点关键词，建议在100字以内。" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="label">
+                                        <label for="desc">描述</label>
+                                    </div>
+                                    <div class="field">
+                                        <input type="text" class="input" id="desc" name="desc" size="50" placeholder="网站的描述，用于搜索引擎优化" data-validate="required:请填写网站的描述，建议在200字以内。" />
+                                    </div>
+                                </div>
+                                <div class="form-button">
+                                    <button class="button bg-main" type="submit">提交</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 主内容end -->
+
+
+
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
