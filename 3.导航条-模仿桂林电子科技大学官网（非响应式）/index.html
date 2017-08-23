@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>导航栏(含下拉菜单)</title>
+    <style type="text/css">
+        *{
+            margin:0;
+            padding:0;
+        }
+        #nav{
+            height: 36px;
+            width: 1024px;
+            margin:0 auto;/* 外边距：上下为0，左右自动（实际上实现了居中显示） */
+            background-color: #0E6FB4;
+        }
+        ul {
+            list-style-type: none;/* 去掉小圆点 */
+            /*margin:0 40px;!* 整个ul距离外层div，上下为0，左右为40px *!*/
+        }
+        ul li{
+            float: left;
+            line-height: 36px;/* 垂直居中 */
+            text-align: center;/* 水平居中 */
+
+            position: relative;/* 相对定位 */
+        }
+        a{
+            width:90px;
+            text-decoration: none;/* 清除超链接的默认下划线 */
+            color: #FFFFFF;/* 文字颜色 */
+            font-family: "Microsoft YaHei ", SimHei, SimSun;
+
+            display: block;/* ★将<a>变成块级元素 */
+
+            /*width: 93px;这样设置宽度的缺点：
+            当文字超出时，该li的宽度不会随着文字的数量增加而增宽！
+            应该使用padding：0 10px;
+            */
+            /*padding:0 10px;!*★ <a>内边距，上下为0，左右为10px *!*/
+        }
+        a:hover{ /* 鼠标经过的变化 */
+            color: yellow;
+            background-color: rgb(0, 76, 136);
+        }
+
+        ul li ul li {
+            float: none;/* 取消浮动 */
+            border-left:none;
+            margin-top: 2px;
+            background-color: #66A2D5;
+        }
+        /* 解决一级菜单随着二级菜单的加入而变大的问题 */
+        ul li ul{
+            display: none;/* 二级菜单隐藏 */
+            position: absolute;
+            width:90px;
+        }
+        /* 设置二级菜单鼠标经过样式 */
+        ul li ul li a:hover{
+            background-color: #4CAF50;
+            font-weight: bolder;
+        }
+
+        /* 使用CSS样式控制下拉菜单的显示和隐藏 */
+        ul li:hover ul{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <ul style="margin: 0 50px">
+            <li><a href="#">网站首页</a></li>
+            <li><a href="#">校园主页</a></li>
+            <li><a href="#">学院简介</a></li>
+            <li><a href="#">机构设置</a></li>
+            <li><a href="#">导师队伍</a>
+                <ul>
+                    <li><a href="#">硕士生导师</a></li>
+                    <li><a href="#">博士生导师</a></li>
+                </ul>
+            </li>
+            <li><a href="#">培养工作</a>
+                <ul>
+                    <li><a href="#">培养信息</a></li>
+                    <li><a href="#">培养方案</a></li>
+                    <li><a href="#">精品课程</a></li>
+                    <li><a href="#">在职研究生班</a></li>
+                    <li><a href="#">研究生奖助</a></li>
+                </ul>
+            </li>
+            <li><a href="#">学位工作</a></li>
+            <li><a href="#">博士教育</a></li>
+            <li><a href="#">下载专区</a></li>
+            <li><a href="#">办事指南</a></li>
+
+        </ul>
+    </div>
+</body>
+
+</html>
